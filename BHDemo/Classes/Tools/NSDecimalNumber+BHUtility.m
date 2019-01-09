@@ -16,10 +16,6 @@ static const NSInteger SCALE = 6;
 	return [[NSDecimalNumber alloc] initWithDouble:0.0];
 }
 
-- (NSDecimalNumber *)floorFormatScale {
-	return [self addingWithDecimal:[NSDecimalNumber zeroNumber]];
-}
-
 #pragma mark - Conversion Methods
 
 + (NSString *)formatToStringWithDecimal:(NSDecimalNumber *)decimal {
