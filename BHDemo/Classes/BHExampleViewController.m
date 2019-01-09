@@ -81,8 +81,10 @@ static NSString *const DEMO_VIEWS_STORYBOARD_NAME = @"DemoViews";
 		self.totalTransferAndSize = [[self transferDecimalMoney] addingWithDecimal:countSize];
 	}
 	
-	if (self.willUsedUtxoModels.count == self.allUtxoModels.count) {
-		self.transferMoneyTextField.text = [[[self transferDecimalMoney] subtractingWithDecimal:countSize] stringValue];
+	// 转出全部
+	if ([needMoney isMoreThanDecimal:self.totalMoney]) {
+		NSDecimalNumber *canTransfer = [self.totalMoney subtractingWithDecimal:[needMoney subtractingWithDecimal:self.totalMoney]];
+		self.transferMoneyTextField.text = [canTransfer stringValue];
 	}
 }
 
