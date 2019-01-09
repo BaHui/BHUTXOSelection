@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2435532621E5C67F00732F3B /* BHUTXOModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2435532521E5C67F00732F3B /* BHUTXOModel.m */; };
+		24E5DB5521E5D36A00ABB9EC /* NSDictionary+BHUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 24E5DB5421E5D36A00ABB9EC /* NSDictionary+BHUtility.m */; };
+		24E5DB5821E5D38700ABB9EC /* NSDecimalNumber+BHUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 24E5DB5721E5D38700ABB9EC /* NSDecimalNumber+BHUtility.m */; };
 		6F5A55512158D9770078916C /* BHExampleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F5A55502158D9770078916C /* BHExampleViewController.m */; };
 		6FE8F9B52150E8D400107C93 /* BHAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FE8F9B42150E8D400107C93 /* BHAppDelegate.m */; };
 		6FE8F9BD2150E8D500107C93 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6FE8F9BC2150E8D500107C93 /* Assets.xcassets */; };
@@ -16,6 +19,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2435532421E5C67F00732F3B /* BHUTXOModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = BHUTXOModel.h; path = Classes/BHUTXOModel.h; sourceTree = "<group>"; };
+		2435532521E5C67F00732F3B /* BHUTXOModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = BHUTXOModel.m; path = Classes/BHUTXOModel.m; sourceTree = "<group>"; };
+		24E5DB5321E5D36A00ABB9EC /* NSDictionary+BHUtility.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "NSDictionary+BHUtility.h"; path = "Classes/Tools/NSDictionary+BHUtility.h"; sourceTree = "<group>"; };
+		24E5DB5421E5D36A00ABB9EC /* NSDictionary+BHUtility.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "NSDictionary+BHUtility.m"; path = "Classes/Tools/NSDictionary+BHUtility.m"; sourceTree = "<group>"; };
+		24E5DB5621E5D38700ABB9EC /* NSDecimalNumber+BHUtility.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "NSDecimalNumber+BHUtility.h"; path = "Classes/Tools/NSDecimalNumber+BHUtility.h"; sourceTree = "<group>"; };
+		24E5DB5721E5D38700ABB9EC /* NSDecimalNumber+BHUtility.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "NSDecimalNumber+BHUtility.m"; path = "Classes/Tools/NSDecimalNumber+BHUtility.m"; sourceTree = "<group>"; };
 		6F5A554F2158D9770078916C /* BHExampleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BHExampleViewController.h; path = Classes/BHExampleViewController.h; sourceTree = "<group>"; };
 		6F5A55502158D9770078916C /* BHExampleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BHExampleViewController.m; path = Classes/BHExampleViewController.m; sourceTree = "<group>"; };
 		6FE8F9B02150E8D400107C93 /* BHDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BHDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -40,6 +49,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2435532321E5C65A00732F3B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2435532421E5C67F00732F3B /* BHUTXOModel.h */,
+				2435532521E5C67F00732F3B /* BHUTXOModel.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		24E5DB5221E5D32F00ABB9EC /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				24E5DB5321E5D36A00ABB9EC /* NSDictionary+BHUtility.h */,
+				24E5DB5421E5D36A00ABB9EC /* NSDictionary+BHUtility.m */,
+				24E5DB5621E5D38700ABB9EC /* NSDecimalNumber+BHUtility.h */,
+				24E5DB5721E5D38700ABB9EC /* NSDecimalNumber+BHUtility.m */,
+			);
+			name = Tools;
+			sourceTree = "<group>";
+		};
 		6FE8F9A72150E8D300107C93 = {
 			isa = PBXGroup;
 			children = (
@@ -62,6 +91,7 @@
 				6FE8F9B32150E8D400107C93 /* BHAppDelegate.h */,
 				6FE8F9B42150E8D400107C93 /* BHAppDelegate.m */,
 				6FE8F9CB2150EAF300107C93 /* ViewControllers */,
+				24E5DB5221E5D32F00ABB9EC /* Tools */,
 				6FE8F9CA2150EAF000107C93 /* Storyboards */,
 				6FE8F9C92150EAE700107C93 /* Supporting Files */,
 			);
@@ -93,6 +123,7 @@
 			children = (
 				6F5A554F2158D9770078916C /* BHExampleViewController.h */,
 				6F5A55502158D9770078916C /* BHExampleViewController.m */,
+				2435532321E5C65A00732F3B /* Model */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -169,7 +200,10 @@
 			files = (
 				6F5A55512158D9770078916C /* BHExampleViewController.m in Sources */,
 				6FE8F9C32150E8D500107C93 /* main.m in Sources */,
+				24E5DB5821E5D38700ABB9EC /* NSDecimalNumber+BHUtility.m in Sources */,
+				24E5DB5521E5D36A00ABB9EC /* NSDictionary+BHUtility.m in Sources */,
 				6FE8F9B52150E8D400107C93 /* BHAppDelegate.m in Sources */,
+				2435532621E5C67F00732F3B /* BHUTXOModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
