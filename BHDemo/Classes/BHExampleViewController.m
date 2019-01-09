@@ -47,14 +47,10 @@ static NSString *const DEMO_VIEWS_STORYBOARD_NAME = @"DemoViews";
 - (void)selectWillUsedUtxosWithMoney:(NSDecimalNumber *)money {
 	self.willUsedUtxoModels = [NSMutableArray new];
 	
-	// 将要转账的金额
-	NSDecimalNumber *decimalMoney = money;
-	
-	
 	// 初步筛选出满足转账金额的
 	NSDecimalNumber *countMoney = [NSDecimalNumber zeroNumber];
 	for (BHUTXOModel *utxoModel in self.allUtxoModels) {
-		if ([countMoney isLessOrEqualThanDecimal:decimalMoney]) {
+		if ([countMoney isLessOrEqualThanDecimal:money]) {
 			countMoney = [countMoney addingWithDecimal:utxoModel.money];
 			[self.willUsedUtxoModels addObject:utxoModel];
 		} else {
@@ -74,16 +70,17 @@ static NSString *const DEMO_VIEWS_STORYBOARD_NAME = @"DemoViews";
 	
 	
 	// 转账金额+费用 与 筛选出来的总值 比较
-	NSDecimalNumber *needMoney = [countSize addingWithDecimal:decimalMoney];
+	NSDecimalNumber *needMoney = [countSize addingWithDecimal:money];
 	if ([needMoney isLessThanDecimal:countMoney]) {
 		[self selectWillUsedUtxosWithMoney:needMoney];
+		return;
 	} else {
 		self.totalTransferAndSize = [[self transferDecimalMoney] addingWithDecimal:countSize];
 	}
 	
 	// 转出全部
 	if ([needMoney isMoreThanDecimal:self.totalMoney]) {
-		NSDecimalNumber *canTransfer = [self.totalMoney subtractingWithDecimal:[needMoney subtractingWithDecimal:self.totalMoney]];
+		NSDecimalNumber *canTransfer = [[self transferDecimalMoney] subtractingWithDecimal:[needMoney subtractingWithDecimal:self.totalMoney]];
 		self.transferMoneyTextField.text = [canTransfer stringValue];
 	}
 }
