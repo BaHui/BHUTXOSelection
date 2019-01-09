@@ -2,7 +2,7 @@
 //  NSDictionary+BHUtility.m
 //  BHDemo
 //
-//  Created by QBH on 2019/1/9.
+//  Created by QiaoBaHui on 2019/1/9.
 //  Copyright © 2019 QiaoBaHui. All rights reserved.
 //
 
