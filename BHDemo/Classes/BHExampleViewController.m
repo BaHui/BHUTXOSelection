@@ -80,7 +80,9 @@ static NSString *const DEMO_VIEWS_STORYBOARD_NAME = @"DemoViews";
 	
 	// 转出全部
 	if ([needMoney isMoreThanDecimal:self.totalMoney]) {
-		NSDecimalNumber *canTransfer = [[self transferDecimalMoney] subtractingWithDecimal:[needMoney subtractingWithDecimal:self.totalMoney]];
+		NSDecimalNumber *overMoney = [needMoney subtractingWithDecimal:self.totalMoney];
+		NSDecimalNumber *canTransfer = [[self transferDecimalMoney] subtractingWithDecimal:overMoney];
+		
 		self.transferMoneyTextField.text = [canTransfer stringValue];
 	}
 }
